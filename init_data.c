@@ -33,6 +33,7 @@ void		ginit(t_global *g)
 //	init_vector(&g->li[0], -446, -10, 1320);
 //	init_vector(&g->li[0], -667, -13, 1800);
 
+	printf("init memory for liz\n");
 	g->liz = (double *)malloc(sizeof(double) * g->lights); 	
 	i = -1;
 	while(++i < g->lights)
@@ -58,6 +59,7 @@ void		ginit(t_global *g)
 //	init_vector(g->angle, 0.15, 0, 0);
 
 	init_vector(g->normal, 0, 0, 7);
+	printf("rotate normal\n");
 	*g->normal = rotate(*g->normal, *g->angle);
 //	init_vector(g->cam_pos, 0.135995, 100, 100.919620);
 //	init_vector(g->cam_pos, 109.86, -6.69, 33.44);
@@ -71,9 +73,13 @@ void		ginit(t_global *g)
 	(hits) = (t_objecthit ***)malloc(sizeof(t_objecthit **) * HEIGHT + 1);
 	init_hits(hits);
 	g->hits = hits;
+	printf("initing rays\n");
 	init_rays(&g->rays);
-	g->line_taken = (int *)malloc(sizeof(int) * HEIGHT);
-	ft_bzero(g->line_taken, 4 * WIDTH);
+	printf("done\n");
+//	g->line_taken = (int *)malloc(sizeof(int) * HEIGHT);
+//	printf("sizeof int is %d\n", sizeof(int));
+	bzero(g->line_taken, sizeof(int) * WIDTH);
+	printf("sizeof int is %d\n", sizeof(int));
 	g->recursion = 0;
 	i = -1;
 	while (++i < CORES)

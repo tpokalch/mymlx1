@@ -14,15 +14,16 @@
 
 int		obj_traver(char **argv, char *c)
 {
+	printf("obj traver argv is %s", *argv);
 	if (ft_strequ(c, "or"))
 		return(ft_strequ(*(argv), "plane") || ft_strequ(*(argv), "sphere")
 		|| ft_strequ(*(argv), "cone") || ft_strequ(*(argv), "cylinder") || ft_strequ(*argv, "spheror") || ft_strequ(*argv, "tri") || open(*argv, O_RDONLY) != -1);
-	return 	(!(ft_strequ(*(argv), "plane")) &&
-		!(ft_strequ(*(argv), "sphere")) &&
-		!(ft_strequ(*(argv), "cylinder")) &&
-		!(ft_strequ(*(argv), "cone")) &&
-		!(ft_strequ(*(argv), "spheror")) &&
-		!(ft_strequ(*(argv), "tri") &&
+	return 	((strcmp(*(argv), "plane")) &&
+		(strcmp(*(argv), "sphere")) &&
+		(strcmp(*(argv), "cylinder")) &&
+		(strcmp(*(argv), "cone")) &&
+		(strcmp(*(argv), "spheror")) &&
+		(strcmp(*(argv), "tri") &&
 		open(*argv, O_RDONLY) == -1));
 }
 
@@ -63,15 +64,17 @@ int		arg_valid(char **argv)
 {
 	int i;
 	int ret;
-	int coords;
+	int coords = 0;
 	int fd;
 
 	i = 0;
 	ret = 0;
 	printf("argv valid?\n");
-	while ((coords = 0) == 0 && *(argv + i))
+	printf("first arg is %s\n", argv[i]);
+	while (/*(coords = 0) == 0 why not work on windows &&*/ *(argv + i))
 	{
-		if (obj_traver(argv + i, "and") && open(*(argv + i), O_RDONLY) == -1)
+		printf("inside while checking %s\n", *(argv + i));
+		if (obj_traver(argv + i, "and"))
 			return (putstr("unknown object\n", 0));
 		else
 		{
@@ -109,13 +112,17 @@ int		check_arg(char **argv, int argc, t_global *g, t_vector *ctr)
 	g->argc = argc - 1;
 	argv = argv + 1;
 	printf("checking arg\n");
-	{
+//	{
 		if (!(g->argc = (arg_valid(argv))))
+		{
+			printf("argc is %d\n", argc);
+			printf("g->argc is %d\n", g->argc);
 			return (putstr("Arg invalid\n", 0));
+		}
 		g->obj = (t_object *)malloc(sizeof(t_object) * (argc + 1));
 		if (!fill_objects(ctr, argv, g))
 			return (printf("Init error\n"));
-	}
+//	}
 	printf("end checkng arg\n");
 	return (1);
 }
