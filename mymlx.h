@@ -2,6 +2,7 @@
 #include <glad/glad.h>
 //GLAD should be included before GLFW
 #include <GLFW/glfw3.h>
+
 #include <stdio.h>
 #include <memory.h>
 #include <stdlib.h>

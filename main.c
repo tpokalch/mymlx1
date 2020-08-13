@@ -125,7 +125,7 @@ int		main(int argc, char **argv)
 
 	g.mlx_ptr = mlx_init();
 
-	fd = open("./video", O_WRONLY | O_CREAT | O_APPEND, S_IRWXU);
+//	fd = open("./video", O_WRONLY | O_CREAT | O_APPEND, S_IRWXU);
 	h = WIDTH;
 	w = HEIGHT;
 	g.cam_pos = &kenobi[0];
@@ -150,7 +150,7 @@ int		main(int argc, char **argv)
 	copy_tcps(&g);
 	printf("starting threads\n");
 	start_threads(recalc, &g);
-	mlx_hook(g.win_ptr, 4, 4, mouse_press, &g);
+//	mlx_hook(g.win_ptr, 4, 4, mouse_press, &g);
 	mlx_hook(g.win_ptr, 2, 2, key_press, &g);
 	mlx_hook(g.win_ptr, 6, 6, mouse_move, &g);
 //	mlx_loop_hook(g.mlx_ptr, loop, &g);
