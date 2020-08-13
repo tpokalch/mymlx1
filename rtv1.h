@@ -18,18 +18,19 @@
 #include <pthread.h>
 #include <fcntl.h>
 #include <time.h>
+#include <strings.h>
 
-#define WIDTH 400
-#define HEIGHT 200
-#define HEIGHT_2 100
-#define WIDTH_2 200
+#define WIDTH 600
+#define HEIGHT 300
+#define HEIGHT_2 150
+#define WIDTH_2 300
 
 
 
 
 #define TASK 20
 #define STRIPS HEIGHT / TASK
-#define CORES 1
+#define CORES 2
 #define M_T 6.28318530718
 #define MAX_REC 4
 #define RECORD_VIDEO 0
