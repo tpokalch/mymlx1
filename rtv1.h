@@ -20,21 +20,22 @@
 #include <time.h>
 #include <strings.h>
 
-#define WIDTH 600
-#define HEIGHT 300
-#define HEIGHT_2 150
-#define WIDTH_2 300
+#define WIDTH 300
+#define HEIGHT 150
+#define HEIGHT_2 75 
+#define WIDTH_2 150
 
 
 
 
 #define TASK 20
 #define STRIPS HEIGHT / TASK
-#define CORES 2
+#define CORES 1
 #define M_T 6.28318530718
 #define MAX_REC 4
 #define RECORD_VIDEO 0
 
+/*
 #define A_KEY 65
 #define S_KEY 83
 #define D_KEY 68
@@ -55,8 +56,31 @@
 #define RIGHT_KEY 262
 #define H_KEY 72
 #define G_KEY 71
-
-
+*/
+/*
+#define A_KEY 0
+#define S_KEY 1
+#define D_KEY 2
+#define F_KEY 3
+#define W_KEY 13
+#define SPACE_KEY 49
+#define ESC_KEY 53
+#define J_KEY 38
+#define K_KEY 40
+#define L_KEY 37
+#define I_KEY 34
+#define O_KEY 31
+#define BRA_KEY 43
+#define KET_KEY 47
+#define UP_KEY 126
+#define DOWN_KEY 125
+#define LEFT_KEY 123
+#define RIGHT_KEY 124
+#define H_KEY 4
+#define G_KEY 5
+#define R_KEY 15
+#define T_KEY 17
+*/
 typedef	struct	s_vector t_vector;
 
 

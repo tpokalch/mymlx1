@@ -10,6 +10,31 @@
 #ifndef MYMLX_H
 # define MYMLX_H
 
+#define A_KEY 65
+#define S_KEY 83
+#define D_KEY 68
+#define F_KEY 70
+#define W_KEY 87
+#define SPACE_KEY 32
+#define ESC_KEY 5
+#define J_KEY 74
+#define K_KEY 75
+#define L_KEY 76
+#define I_KEY 73
+#define O_KEY 79
+#define BRA_KEY 43
+#define KET_KEY 47
+#define UP_KEY 265
+#define DOWN_KEY 264
+#define LEFT_KEY 263
+#define RIGHT_KEY 262
+#define H_KEY 72
+#define G_KEY 71
+#define R_KEY 82
+#define T_KEY 84
+
+
+
 typedef struct  s_mlx
 {
         int width;

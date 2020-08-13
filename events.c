@@ -54,6 +54,7 @@ int		key_press(int kk, void *param)
 	t_global *g;
 
 	g = param;
+	printf("keycode %d\n", kk);
 //	if (kk == H_KEY7)
 //	comment this to keep shot constant
 //	uncomment to keep shot only 1 frame
@@ -81,9 +82,11 @@ int		key_press(int kk, void *param)
 		copy_tcps(g);
 		return (start_threads(recalc, g));
 	}
-	else if ((kk == S_KEY || kk == S_KEY) && g->light_switch > 0 && g->light_switch <= g->lights)
+	else if ((kk == R_KEY || kk == T_KEY) && g->light_switch > 0 && g->light_switch <= g->lights)
 	{
-		g->liz[g->light_switch - 1] = g->liz[g->light_switch - 1] + 15 * (2 * (kk == S_KEY) - 1);
+		printf("key is %d\n", kk);
+		g->liz[g->light_switch - 1] += 15 * (2 * (kk == R_KEY) - 1);
+
 //		*g->li = sum(*g->li, scale((2 * (kk == S_KEY) - 1), *g->normal));
 //		g->liz = g->li->z;
 //		return (start_threads(recalc, g));	

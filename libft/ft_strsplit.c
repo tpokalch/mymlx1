@@ -6,7 +6,7 @@
 /*   By: tpokalch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 13:55:05 by tpokalch          #+#    #+#             */
-/*   Updated: 2018/11/11 20:49:34 by tpokalch         ###   ########.fr       */
+/*   Updated: 2019/01/15 14:37:33 by tpokalch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,9 @@ char			**ft_strsplit(char const *s, char c)
 	r = (char**)malloc((n + 1) * sizeof(char *));
 	if (r == 0)
 		return (0);
-	while (i <= n - 1)
+	while (i <= n)
 	{
-		if (!(*(r + i) = (char *)malloc((1 + l) * sizeof(char))))
+		if (!(*(r + i) = (char *)malloc((l + 1) * sizeof(char))))
 			return (NULL);
 		i++;
 	}

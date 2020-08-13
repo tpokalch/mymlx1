@@ -78,7 +78,7 @@ void		ginit(t_global *g)
 	printf("done\n");
 //	g->line_taken = (int *)malloc(sizeof(int) * HEIGHT);
 //	printf("sizeof int is %d\n", sizeof(int));
-	bzero(g->line_taken, sizeof(int) * WIDTH);
+//	bzero(g->line_taken, sizeof(int) * WIDTH);
 	printf("sizeof int is %d\n", sizeof(int));
 	g->recursion = 0;
 	i = -1;
